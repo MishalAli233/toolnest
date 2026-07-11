@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMI Calculator | ToolNest</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f7fb;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+.container{
+background:#fff;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+width:100%;
+max-width:420px;
+text-align:center;
+}
+
+h1{
+margin-bottom:20px;
+color:#222;
+}
+
+input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+font-size:18px;
+border:2px solid #ddd;
+border-radius:10px;
+}
+
+button{
+width:100%;
+padding:14px;
+font-size:18px;
+background:#0d6efd;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+.result{
+margin-top:20px;
+font-size:18px;
+line-height:1.8;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>💰 EMI Calculator</h1>
+
+<input type="number" id="loan" placeholder="Loan Amount">
+
+<input type="number" id="rate" placeholder="Annual Interest Rate (%)">
+
+<input type="number" id="years" placeholder="Loan Duration (Years)">
+
+<button onclick="calculateEMI()">
+Calculate EMI
+</button>
+
+<div class="result" id="result"></div>
+
+<script>function calculateEMI(){
+
+let loan=parseFloat(document.getElementById("loan").value);
+let annualRate=parseFloat(document.getElementById("rate").value);
+let years=parseFloat(document.getElementById("years").value);
+
+if(!loan || !annualRate || !years){
+document.getElementById("result").innerHTML=
+"⚠️ Please fill in all fields.";
+return;
+}
+
+let monthlyRate=annualRate/12/100;
+let months=years*12;
+
+let emi=(loan*monthlyRate*Math.pow(1+monthlyRate,months))/
+(Math.pow(1+monthlyRate,months)-1);
+
+let totalPayment=emi*months;
+let totalInterest=totalPayment-loan;
+
+document.getElementById("result").innerHTML=
+`
+Monthly EMI: <b>${emi.toFixed(2)}</b><br>
+Total Interest: <b>${totalInterest.toFixed(2)}</b><br>
+Total Payment: <b>${totalPayment.toFixed(2)}</b>
+`;
+}</script>
+
+</div>
+
+</body>
+</html>
