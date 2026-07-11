@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Percentage Calculator | ToolNest</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f7fb;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+.container{
+background:#fff;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+width:100%;
+max-width:420px;
+text-align:center;
+}
+
+h1{
+margin-bottom:20px;
+color:#222;
+}
+
+input{
+width:100%;
+padding:14px;
+font-size:18px;
+border:2px solid #ddd;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+button{
+width:100%;
+padding:14px;
+font-size:18px;
+background:#28a745;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+.result{
+margin-top:20px;
+font-size:22px;
+font-weight:bold;
+line-height:1.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📊 Percentage Calculator</h1>
+
+<input type="number" id="part" placeholder="Enter Obtained Value">
+
+<input type="number" id="total" placeholder="Enter Total Value">
+
+<button onclick="calculatePercentage()">
+Calculate Percentage
+</button>
+
+<div class="result" id="result"></div>
+
+<script>function calculatePercentage(){
+
+let part=parseFloat(document.getElementById("part").value);
+let total=parseFloat(document.getElementById("total").value);
+
+if(isNaN(part) || isNaN(total) || total<=0){
+document.getElementById("result").innerHTML=
+"⚠️ Please enter valid values.";
+return;
+}
+
+let percentage=(part/total)*100;
+
+document.getElementById("result").innerHTML=
+`Percentage: <b>${percentage.toFixed(2)}%</b>`;
+}</script>
+
+</div>
+
+</body>
+</html>
