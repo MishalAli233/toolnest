@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Age Calculator | ToolNest</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f7fb;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+.container{
+background:#fff;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+width:100%;
+max-width:420px;
+text-align:center;
+}
+
+h1{
+margin-bottom:20px;
+color:#222;
+}
+
+p{
+margin-bottom:20px;
+color:#666;
+}
+
+input{
+width:100%;
+padding:14px;
+font-size:18px;
+border:2px solid #ddd;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+button{
+width:100%;
+padding:14px;
+font-size:18px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+.result{
+margin-top:25px;
+font-size:22px;
+font-weight:bold;
+}
+
+.footer{
+margin-top:30px;
+font-size:14px;
+color:#777;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>🎂 Age Calculator</h1>
+
+<p>Select your Date of Birth</p>
+
+<input type="date" id="dob">
+
+<button onclick="age()">Calculate Age</button>
+
+<div class="result" id="result"></div>
+
+<div class="footer">
+ToolNest © 2026
+</div>
+
+</div>
+
+<script>
+function age(){
+
+let dob=new Date(document.getElementById("dob").value);
+
+let today=new Date();
+
+let years=today.getFullYear()-dob.getFullYear();
+
+let months=today.getMonth()-dob.getMonth();
+
+let days=today.getDate()-dob.getDate();
+
+if(days<0){
+months--;
+days+=30;
+}
+
+if(months<0){
+years--;
+months+=12;
+}
+
+document.getElementById("result").innerHTML=
+years+" Years<br>"+months+" Months<br>"+days+" Days";
+
+}
+</script>
+
+</body>
+</html>
