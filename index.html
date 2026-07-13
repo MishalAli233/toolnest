@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>ToolNest - Free Online Tools</title>
 
 <style>
@@ -18,8 +16,9 @@ font-family:Arial,sans-serif;
 
 body{
 background:#f5f7fb;
+color:#222;
 padding:20px;
-transition:.3s;
+transition:0.3s;
 }
 
 .container{
@@ -29,15 +28,24 @@ text-align:center;
 }
 
 h1{
-font-size:40px;
+font-size:42px;
 margin-top:20px;
-color:#222;
 }
 
-p{
-margin:15px 0;
-color:#666;
+.subtitle{
 font-size:18px;
+color:#666;
+margin:15px 0 25px;
+}
+
+.dark-btn{
+background:#222;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+cursor:pointer;
+margin-bottom:20px;
 }
 
 #search{
@@ -47,19 +55,14 @@ padding:14px;
 font-size:18px;
 border:2px solid #ddd;
 border-radius:10px;
-margin:25px auto;
+margin:20px auto;
 display:block;
 }
 
-.dark-btn{
-padding:12px 20px;
-background:#222;
-color:#fff;
-border:none;
-border-radius:10px;
-cursor:pointer;
-margin:15px;
-font-size:16px;
+.section-title{
+margin-top:35px;
+margin-bottom:15px;
+font-size:30px;
 }
 
 .tools{
@@ -70,7 +73,7 @@ margin-top:20px;
 }
 
 .card{
-background:#fff;
+background:white;
 padding:25px;
 border-radius:15px;
 box-shadow:0 10px 25px rgba(0,0,0,.1);
@@ -86,7 +89,7 @@ margin-bottom:15px;
 display:inline-block;
 padding:12px 20px;
 background:#007bff;
-color:#fff;
+color:white;
 text-decoration:none;
 border-radius:10px;
 }
@@ -94,23 +97,18 @@ border-radius:10px;
 .card a:hover{
 background:#0056b3;
 }
-<div style="margin-top:20px;">
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy-policy.html">Privacy Policy</a> |
-<a href="terms.html">Terms & Conditions</a>
-</div>
-.footer{<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a>
-<hr>
 
-<p>
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy-policy.html">Privacy Policy</a> |
-<a href="terms.html">Terms & Conditions</a>
-</p>margin:40px 0 20px;
-color:#777;
+.footer{
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid #ddd;
+font-size:15px;
+}
+
+.footer a{
+text-decoration:none;
+margin:0 8px;
+color:#007bff;
 }
 
 #topBtn{
@@ -120,27 +118,36 @@ bottom:20px;
 right:20px;
 padding:12px 18px;
 border:none;
-border-radius:50px;
+border-radius:50%;
 background:#007bff;
-color:#fff;
+color:white;
 cursor:pointer;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>🛠️ ToolNest</h1>
+<h1>🛠 ToolNest</h1>
 
-<p>Free Online Tools For Everyone</p>
+<p class="subtitle">
+Free Online Tools For Everyone
+</p>
 
-<button class="dark-btn" onclick="darkMode()">🌙 Dark Mode</button>
+<button class="dark-btn" onclick="darkMode()">
+🌙 Dark Mode
+</button>
 
-<h2>⭐ Featured Tools</h2>
+<input
+type="text"
+id="search"
+placeholder="🔍 Search tools..."
+onkeyup="searchTools()">
+
+<h2 class="section-title">⭐ Featured Tools</h2>
 
 <div class="tools"><div class="card">
 <h2>🎂 Age Calculator</h2>
@@ -159,13 +166,7 @@ cursor:pointer;
 
 </div>
 
-<input
-type="text"
-id="search"
-placeholder="🔍 Search tools..."
-onkeyup="searchTools()">
-
-<h2 style="margin-top:35px;">📂 All Tools</h2>
+<h2 class="section-title">📂 All Tools</h2>
 
 <div class="tools">
 
@@ -265,139 +266,95 @@ onkeyup="searchTools()">
 <div class="card">
 <h2>🔢 Random Number Generator</h2>
 <a href="random-number-generator.html">Open Tool</a>
-</div><div class="card">
-<h2>🏷️ Discount Calculator</h2>
-<a href="discount-calculator.html">Open Tool</a>
 </div>
 
-<div class="card">
-<h2>💸 Loan Calculator</h2>
-<a href="loan-calculator.html">Open Tool</a>
 </div>
-
-<div class="card">
-<h2>🧾 GST Calculator</h2>
-<a href="gst-calculator.html">Open Tool</a>
-</div>
-
-<div class="card">
-<h2>🔤 Text Case Converter</h2>
-<a href="text-case-converter.html">Open Tool</a>
-</div>
-
-<div class="card">
-<h2>🌡️ Temperature Converter</h2>
-<a href="temperature-converter.html">Open Tool</a>
-</div>
-
-<div class="card">
-<h2>📏 Length Converter</h2>
-<a href="length-converter.html">Open Tool</a>
-</div>
-
-<div class="card">
-<h2>⚖️ Weight Converter</h2>
-<a href="weight-converter.html">Open Tool</a>
-</div>
-
-<div class="card">
-<h2>⚡ Electricity Bill Calculator</h2>
-<a href="electricity-bill.html">Open Tool</a>
-</div>
-
-<div class="card">
-<h2>💵 Salary Calculator</h2>
-<a href="salary-calculator.html">Open Tool</a>
-</div>
-
-<div class="card">
-<h2>🔢 Random Number Generator</h2>
-<a href="random-number-generator.html">Open Tool</a>
-</div></div>
 
 <div class="footer">
-© 2026 ToolNest | All Rights Reserved
-</div>
+
+<p>
+<a href="about.html">About Us</a> |
+<a href="contact.html">Contact Us</a> |
+<a href="privacy-policy.html">Privacy Policy</a> |
+<a href="terms.html">Terms & Conditions</a>
+</p>
+
+<p>© 2026 ToolNest. All Rights Reserved.</p>
 
 </div>
 
-<button onclick="topFunction()" id="topBtn">⬆️ Top</button>
+</div>
 
-<script>
+<button id="topBtn" onclick="topFunction()">⬆️<script>
 
-function searchTools(){
+function searchTools() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let cards = document.getElementsByClassName("card");
 
-let input=document.getElementById("search").value.toLowerCase();
-let cards=document.getElementsByClassName("card");
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
 
-for(let i=0;i<cards.length;i++){
-
-let title=cards[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
-
-if(title.includes(input)){
-cards[i].style.display="";
-}else{
-cards[i].style.display="none";
+        if (title.includes(input)) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
 }
 
+let dark = false;
+
+function darkMode() {
+
+    dark = !dark;
+
+    if (dark) {
+
+        document.body.style.background = "#222";
+        document.body.style.color = "white";
+
+        let cards = document.getElementsByClassName("card");
+
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].style.background = "#333";
+            cards[i].style.color = "white";
+        }
+
+    } else {
+
+        document.body.style.background = "#f5f7fb";
+        document.body.style.color = "#222";
+
+        let cards = document.getElementsByClassName("card");
+
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].style.background = "white";
+            cards[i].style.color = "#222";
+        }
+
+    }
 }
 
-}
+window.onscroll = function () {
 
-let dark=false;
+    if (document.documentElement.scrollTop > 200) {
+        document.getElementById("topBtn").style.display = "block";
+    } else {
+        document.getElementById("topBtn").style.display = "none";
+    }
 
-function darkMode(){
+};
 
-dark=!dark;
+function topFunction() {
 
-if(dark){
-
-document.body.style.background="#222";
-document.body.style.color="white";
-
-let cards=document.getElementsByClassName("card");
-
-for(let i=0;i<cards.length;i++){
-cards[i].style.background="#333";
-cards[i].style.color="white";
-}
-
-}else{
-
-document.body.style.background="#f5f7fb";
-document.body.style.color="#000";
-
-let cards=document.getElementsByClassName("card");
-
-for(let i=0;i<cards.length;i++){
-cards[i].style.background="white";
-cards[i].style.color="#000";
-}
-
-}
-
-}
-
-window.onscroll=function(){
-
-if(document.documentElement.scrollTop>200){
-document.getElementById("topBtn").style.display="block";
-}else{
-document.getElementById("topBtn").style.display="none";
-}
-
-}
-
-function topFunction(){
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 }
 
 </script>
 
 </body>
-</html>
+</html></butt9on>
