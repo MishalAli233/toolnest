@@ -231,7 +231,19 @@ onkeyup="searchTools()">
 </div>
 
 </div>
+function darkMode(){
 
+document.body.style.background="#222";
+document.body.style.color="white";
+
+let cards=document.getElementsByClassName("card");
+
+for(let i=0;i<cards.length;i++){
+cards[i].style.background="#333";
+cards[i].style.color="white";
+}
+
+}
 <script>
 function searchTools(){
 
