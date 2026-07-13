@@ -13,7 +13,26 @@ padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
+<script>
+function searchTools(){
 
+let input=document.getElementById("search").value.toLowerCase();
+let cards=document.getElementsByClassName("card");
+
+for(let i=0;i<cards.length;i++){
+
+let title=cards[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+
+if(title.indexOf(input)>-1){
+cards[i].style.display="block";
+}else{
+cards[i].style.display="none";
+}
+
+}
+
+}
+</script>
 body{
 background:#f5f7fb;
 padding:20px;
