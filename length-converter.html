@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Length Converter | ToolNest</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f7fb;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+.container{
+background:#fff;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+width:100%;
+max-width:450px;
+text-align:center;
+}
+
+h1{
+margin-bottom:20px;
+color:#222;
+}
+
+input,select{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+font-size:18px;
+border:2px solid #ddd;
+border-radius:10px;
+}
+
+button{
+width:100%;
+padding:14px;
+font-size:18px;
+background:#007bff;
+color:#fff;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+.result{
+margin-top:20px;
+font-size:22px;
+font-weight:bold;
+}
+
+.footer{
+margin-top:30px;
+font-size:14px;
+color:#777;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📏 Length Converter</h1>
+
+<input type="number" id="value" placeholder="Enter value">
+
+<select id="convert">
+<option value="mk">Meter → Kilometer</option>
+<option value="km">Kilometer → Meter</option>
+<option value="mc">Meter → Centimeter</option>
+<option value="cm">Centimeter → Meter</option>
+</select>
+
+<button onclick="convertLength()">Convert</button>
+
+<div id="result" class="result"></div>
+
+<div class="footer">
+© 2026 ToolNest
+</div>
+
+</div>
+
+
+<script>
+function convertLength(){
+
+let value=parseFloat(document.getElementById("value").value);
+let type=document.getElementById("convert").value;
+
+if(isNaN(value)){
+document.getElementById("result").innerHTML="⚠️ Enter a value";
+return;
+}
+
+let result;
+
+if(type=="mk") result=value/1000;
+if(type=="km") result=value*1000;
+if(type=="mc") result=value*100;
+if(type=="cm") result=value/100;
+
+document.getElementById("result").innerHTML=
+"Result: "+result.toFixed(2);
+
+}
+</script>
+
+</body>
+</html>
