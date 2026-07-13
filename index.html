@@ -2,19 +2,10 @@
 <html lang="en">
 <head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BV2377SBS1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-BV2377SBS1');
-</script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Age Calculator | ToolNest</title>
+<title>ToolNest - Free Online Tools</title>
 
 <style>
 *{
@@ -26,70 +17,56 @@ font-family:Arial,sans-serif;
 
 body{
 background:#f5f7fb;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
 padding:20px;
 }
 
 .container{
-background:#fff;
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
-width:100%;
-max-width:420px;
+max-width:900px;
+margin:auto;
 text-align:center;
 }
 
 h1{
-margin-bottom:20px;
+font-size:36px;
 color:#222;
+margin-top:30px;
 }
 
 p{
-margin-bottom:20px;
 color:#666;
+margin:15px 0 30px;
+font-size:18px;
 }
 
-input{
-width:100%;
-padding:14px;
-font-size:18px;
-border:2px solid #ddd;
-border-radius:10px;
+.tools{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.card h2{
 margin-bottom:15px;
 }
 
-button{
-width:100%;
-padding:14px;
-font-size:18px;
+.card a{
+display:inline-block;
+padding:12px 20px;
 background:#007bff;
-color:#fff;
-border:none;
+color:white;
+text-decoration:none;
 border-radius:10px;
-cursor:pointer;
 }
 
-button:hover{
+.card a:hover{
 background:#0056b3;
-}
-
-.result{
-margin-top:25px;
-font-size:22px;
-font-weight:bold;
-line-height:1.8;
-}
-
-.footer{
-margin-top:30px;
-font-size:14px;
-color:#777;
-}
-</style>
+}</style>
 
 </head>
 
@@ -97,72 +74,43 @@ color:#777;
 
 <div class="container">
 
-<h1>🎂 Age Calculator</h1>
+<h1>🛠️ ToolNest</h1>
 
-<p>Select your Date of Birth</p>
+<p>Free Online Tools For Everyone</p>
 
-<input type="date" id="dob">
+<div class="tools">
 
-<button onclick="calculateAge()">
-Calculate Age
-</button>
+<div class="card">
+<h2>🎂 Age Calculator</h2>
+<a href="age-calculator.html">Open Tool</a>
+</div>
 
-<div id="result" class="result"></div>
+<div class="card">
+<h2>⚖️ BMI Calculator</h2>
+<a href="bmi.html">Open Tool</a>
+</div>
 
-<div class="footer">
-© 2026 ToolNest
+<div class="card">
+<h2>💱 Currency Converter</h2>
+<a href="currency-converter.html">Open Tool</a>
+</div><div class="card">
+<h2>📏 Unit Converter</h2>
+<a href="unit-converter.html">Open Tool</a>
+</div>
+
+<div class="card">
+<h2>📊 Percentage Calculator</h2>
+<a href="percentage.html">Open Tool</a>
+</div>
+
+<div class="card">
+<h2>🔳 QR Generator</h2>
+<a href="qr-generator.html">Open Tool</a>
 </div>
 
 </div>
 
-<script>function calculateAge() {
-
-let dob = document.getElementById("dob").value;
-
-if (dob === "") {
-document.getElementById("result").innerHTML =
-"⚠️ Please select your date of birth.";
-return;
-}
-
-let birthDate = new Date(dob);
-let today = new Date();
-
-let years = today.getFullYear() - birthDate.getFullYear();
-let months = today.getMonth() - birthDate.getMonth();
-let days = today.getDate() - birthDate.getDate();
-
-if (days < 0) {
-months--;
-let lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
-days += lastMonth.getDate();
-}
-
-if (months < 0) {
-years--;
-months += 12;
-}
-
-let nextBirthday = new Date(
-today.getFullYear(),
-birthDate.getMonth(),
-birthDate.getDate()
-);
-
-if (nextBirthday < today) {
-nextBirthday.setFullYear(today.getFullYear() + 1);
-}
-
-let diff = nextBirthday - today;
-let daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
-
-document.getElementById("result").innerHTML =
-`🎉 ${years} Years<br>
-📅 ${months} Months<br>
-🗓️ ${days} Days<br><br>
-🎂 Next Birthday in <b>${daysLeft}</b> days`;
-
-}</script>
+</div>
 
 </body>
 </html>
