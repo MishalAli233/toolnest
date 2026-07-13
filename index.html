@@ -56,7 +56,7 @@ gap:20px;
 }
 
 .card{
-background:#fff;
+background:white;
 padding:25px;
 border-radius:15px;
 box-shadow:0 10px 25px rgba(0,0,0,.1);
@@ -71,7 +71,7 @@ font-size:22px;
 display:inline-block;
 padding:12px 20px;
 background:#007bff;
-color:#fff;
+color:white;
 text-decoration:none;
 border-radius:10px;
 }
@@ -94,7 +94,17 @@ color:#777;
 
 <div class="container">
 
-<h1>🛠️ ToolNest</h1><div class="card">
+<h1>🛠️ ToolNest</h1>
+
+<p>Free Online Tools For Everyone</p>
+
+<input
+type="text"
+id="search"
+placeholder="🔍 Search tools..."
+onkeyup="searchTools()">
+
+<div class="tools"><div class="card">
 <h2>🎂 Age Calculator</h2>
 <a href="age.html">Open Tool</a>
 </div>
@@ -132,7 +142,50 @@ color:#777;
 <div class="card">
 <h2>📏 Unit Converter</h2>
 <a href="unit.html">Open Tool</a>
-</div></div>
+</div>
+
+<div class="card">
+<h2>📝 Word Counter</h2>
+<a href="word-counter.html">Open Tool</a>
+</div>
+
+<div class="card">
+<h2>📅 Date Difference</h2>
+<a href="date-difference.html">Open Tool</a>
+</div>
+
+<div class="card">
+<h2>🏷️ Discount Calculator</h2>
+<a href="discount-calculator.html">Open Tool</a>
+</div>
+
+<div class="card">
+<h<div class="card">
+<h2>🧾 GST Calculator</h2>
+<a href="gst-calculator.html">Open Tool</a>
+</div>
+
+<div class="card">
+<h2>🔤 Text Case Converter</h2>
+<a href="text-case-converter.html">Open Tool</a>
+</div>
+
+<div class="card">
+<h2>🌡️ Temperature Converter</h2>
+<a href="temperature-converter.html">Open Tool</a>
+</div>
+
+<div class="card">
+<h2>📏 Length Converter</h2>
+<a href="length-converter.html">Open Tool</a>
+</div>
+
+<div class="card">
+<h2>⚖️ Weight Converter</h2>
+<a href="weight-converter.html">Open Tool</a>
+</div>
+
+</div>
 
 <div class="footer">
 © 2026 ToolNest
@@ -150,9 +203,10 @@ for(let i=0;i<cards.length;i++){
 
 let title=cards[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
 
-if(title.indexOf(input)>-1){
+if(title.includes(input)){
 cards[i].style.display="";
-}else{
+}
+else{
 cards[i].style.display="none";
 }
 
@@ -163,43 +217,3 @@ cards[i].style.display="none";
 
 </body>
 </html>
-
-<div class="card">
-<h2>📝 Word Counter</h2>
-<a href="word-counter.html">Open Tool</a>
-</div><div class="card">
-<h2>🏷️ Discount Calculator</h2>
-<a href="discount-calculator.html">Open Tool</a>
-</div>
-<div class="card">
-<h2>💸 Loan Calculator</h2>
-<a href="loan-calculator.html">Open Tool</a>
-  </div><div class="card">
-<h2>🧾 GST Calculator</h2>
-<a href="gst-calculator.html">Open Tool</a>
-  </div><div class="card">
-<h2>🔤 Text Case Converter</h2>
-<a href="text-case-converter.html">Open Tool</a>
-  </div><div class="card">
-<h2>🌡️ Temperature Converter</h2>
-<a href="temperature-converter.html">Open Tool</a>
-  </div><div class="card">
-<h2>📏 Length Converter</h2>
-<a href="length-converter.html">Open Tool</a>
-  </div><div class="card">
-<h2>⚖️ Weight Converter</h2>
-<a href="weight-converter.html">Open Tool</a>
-  </div>
-<div class="card">
-<h2>📅 Date Difference</h2>
-<a href="date-difference.html">
-
-<p>Free Online Tools For Everyone</p>
-
-<input
-type="text"
-id="search"
-placeholder="🔍 Search tools..."
-onkeyup="searchTools()">
-
-<div class="tools">
