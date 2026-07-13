@@ -15,7 +15,44 @@ padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
+<button onclick="topFunction()" id="topBtn" style="
+display:none;
+position:fixed;
+bottom:20px;
+right:20px;
+padding:12px 18px;
+border:none;
+border-radius:50px;
+background:#007bff;
+color:white;
+cursor:pointer;
+">
+⬆️ Top
+</button>
 
+<script>
+
+window.onscroll=function(){
+
+if(document.documentElement.scrollTop>200){
+document.getElementById("topBtn").style.display="block";
+}
+else{
+document.getElementById("topBtn").style.display="none";
+}
+
+}
+
+function topFunction(){
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+</script>
 body{
 background:#f5f7fb;
 padding:20px;
