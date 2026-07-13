@@ -8,6 +8,7 @@
 <title>ToolNest - Free Online Tools</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -66,7 +67,15 @@ border-radius:10px;
 
 .card a:hover{
 background:#0056b3;
-}</style>
+}
+
+.footer{
+margin-top:40px;
+color:#777;
+font-size:14px;
+}
+
+</style>
 
 </head>
 
@@ -85,30 +94,44 @@ background:#0056b3;
 <a href="age-calculator.html">Open Tool</a>
 </div>
 
+
 <div class="card">
 <h2>⚖️ BMI Calculator</h2>
 <a href="bmi.html">Open Tool</a>
 </div>
 
+
 <div class="card">
 <h2>💱 Currency Converter</h2>
 <a href="currency-converter.html">Open Tool</a>
-</div><div class="card">
+</div>
+
+
+<div class="card">
 <h2>📏 Unit Converter</h2>
 <a href="unit-converter.html">Open Tool</a>
 </div>
+
 
 <div class="card">
 <h2>📊 Percentage Calculator</h2>
 <a href="percentage.html">Open Tool</a>
 </div>
 
+
 <div class="card">
 <h2>🔳 QR Generator</h2>
 <a href="qr-generator.html">Open Tool</a>
 </div>
 
+
 </div>
+
+
+<div class="footer">
+© 2026 ToolNest
+</div>
+
 
 </div>
 
