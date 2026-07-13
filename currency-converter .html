@@ -104,7 +104,17 @@ color:#777;
 
 <button onclick="convertCurrency()">
 Convert
-</button>function convertCurrency(){
+</button>
+
+<div id="result" class="result"></div>
+
+<div class="footer">
+© 2026 ToolNest
+</div>
+
+</div>
+
+<script>function convertCurrency(){
 
 let amount = document.getElementById("amount").value;
 let currency = document.getElementById("currency").value;
@@ -139,17 +149,7 @@ let total = amount * rate;
 document.getElementById("result").innerHTML =
 `${amount} ${currency}<br> = <br><b>${total.toFixed(2)} PKR</b>`;
 
-}
-
-<div id="result" class="result"></div>
-
-<div class="footer">
-© 2026 ToolNest
-</div>
-
-</div>
-
-<script></script>
+}</script>
 
 </body>
 </html>
