@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<meta name="google-site-verification" content="ofhBQG5UwHP2WUJAWOqB2mr3wwcOTsvlSr64-yoTYAg" />
-
-<title>ToolNest - Free Online Tools</title>
-
-</head>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6114784556105412"
-crossorigin="anonymous"></script>
+<head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta name="google-site-verification" content="ofhBQG5UwHP2WUJAWOqB2mr3wwcOTsvlSr64-yoTYAg">
+
 <title>ToolNest - Free Online Tools</title>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6114784556105412"
+crossorigin="anonymous"></script>
+
 
 <style>
 
@@ -29,6 +27,7 @@ body{
 background:#f5f7fb;
 color:#222;
 padding:20px;
+transition:.3s;
 }
 
 .container{
@@ -48,7 +47,7 @@ font-size:18px;
 margin-bottom:20px;
 }
 
-.dark-btn{
+button{
 padding:12px 20px;
 background:#222;
 color:white;
@@ -58,6 +57,7 @@ cursor:pointer;
 }
 
 #search{
+
 width:100%;
 max-width:500px;
 padding:14px;
@@ -65,57 +65,114 @@ margin:20px;
 border-radius:10px;
 border:2px solid #ddd;
 font-size:18px;
+
 }
+
 
 .section-title{
+
 margin:35px 0 15px;
 font-size:30px;
+
 }
 
+
 .tools{
+
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
 gap:20px;
+
 }
 
+
 .card{
+
 background:white;
 padding:25px;
 border-radius:15px;
 box-shadow:0 10px 25px rgba(0,0,0,.1);
+transition:.3s;
+
 }
+
+
+.card:hover{
+
+transform:translateY(-5px);
+
+}
+
 
 .card h2{
+
 font-size:22px;
 margin-bottom:15px;
+
 }
 
+
 .card a{
+
 background:#007bff;
 color:white;
 padding:12px 20px;
 border-radius:10px;
 text-decoration:none;
+display:inline-block;
+
 }
 
+
 .footer{
+
 margin-top:40px;
 border-top:1px solid #ddd;
 padding-top:20px;
+
 }
 
+
 .footer a{
+
 color:#007bff;
 text-decoration:none;
+
+}
+
+
+/* Dark Mode */
+
+.dark{
+
+background:#111;
+color:white;
+
+}
+
+.dark .card{
+
+background:#222;
+color:white;
+
+}
+
+.dark .subtitle{
+
+color:#ccc;
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
+
 <div class="container">
+
 
 <h1>🛠 ToolNest</h1>
 
@@ -123,36 +180,55 @@ text-decoration:none;
 Free Online Tools For Everyone
 </p>
 
-<button class="dark-btn" onclick="darkMode()">🌙 Dark Mode</button>
 
-<input id="search" type="text" placeholder="🔍 Search tools..." onkeyup="searchTools()">
+<button onclick="darkMode()">🌙 Dark Mode</button>
 
 
-<h2 class="section-title">⭐ Featured Tools</h2>
+<input id="search" 
+type="text" 
+placeholder="🔍 Search tools..."
+onkeyup="searchTools()">
+
+
+
+<h2 class="section-title">
+⭐ Featured Tools
+</h2>
+
 
 <div class="tools">
+
 
 <div class="card">
 <h2>🎂 Age Calculator</h2>
 <a href="age.html">Open Tool</a>
 </div>
 
+
 <div class="card">
 <h2>💰 EMI Calculator</h2>
 <a href="emi.html">Open Tool</a>
 </div>
+
 
 <div class="card">
 <h2>🔐 Password Generator</h2>
 <a href="password.html">Open Tool</a>
 </div>
 
+
 </div>
 
 
-<h2 class="section-title">📂 All Tools</h2>
+
+<h2 class="section-title">
+📂 All Tools
+</h2>
+
+
 
 <div class="tools">
+
 
 <div class="card"><h2>🎂 Age Calculator</h2><a href="age.html">Open Tool</a></div>
 
@@ -184,26 +260,42 @@ Free Online Tools For Everyone
 
 <div class="card"><h2>⚖️ Weight Converter</h2><a href="weight-converter.html">Open Tool</a></div>
 
+
 </div>
+
 
 
 <div class="footer">
 
+
 <p>
+
 <a href="about.html">About</a> |
+
 <a href="contact.html">Contact</a> |
+
 <a href="privacy-policy.html">Privacy Policy</a> |
+
 <a href="terms.html">Terms</a>
+
 </p>
 
-<p>© 2026 ToolNest</p>
+
+<p>
+© 2026 ToolNest
+</p>
+
 
 </div>
 
+
+
 </div>
+
 
 
 <script>
+
 
 function searchTools(){
 
@@ -211,35 +303,29 @@ let input=document.getElementById("search").value.toLowerCase();
 
 let cards=document.getElementsByClassName("card");
 
+
 for(let i=0;i<cards.length;i++){
 
 let text=cards[i].innerText.toLowerCase();
 
-cards[i].style.display=text.includes(input)?"":"none";
+cards[i].style.display=text.includes(input) ? "" : "none";
 
 }
 
 }
+
 
 
 function darkMode(){
 
-document.body.style.background="#222";
-document.body.style.color="white";
-
-let cards=document.getElementsByClassName("card");
-
-for(let i=0;i<cards.length;i++){
-
-cards[i].style.background="#333";
-cards[i].style.color="white";
+document.body.classList.toggle("dark");
 
 }
 
-}
 
 </script>
 
 
 </body>
+
 </html>
